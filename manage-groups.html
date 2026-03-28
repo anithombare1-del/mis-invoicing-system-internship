@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Groups</title>
+</head>
+<body>
+
+<h2>Group Management</h2>
+
+<input type="text" id="groupName" placeholder="Enter Group Name">
+<button onclick="addGroup()">Add Group</button>
+
+<h3>Group List</h3>
+<ul id="groupList"></ul>
+
+<script>
+const API_URL = "http://localhost:8080/api/groups";
+
+function addGroup() {
+    const name = document.getElementById("groupName").value;
+
+    fetch(API_URL + "/add", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ groupName: name })
+    })
+    .then(res => res.text())
+    .then(data => {
+        alert(data);
+        loadGroups();
+    });
+}
+
+function loadGroups() {
+    fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+        const list = document.getElementById("groupList");
+        list.innerHTML = "";
+        data.forEach(g => {
+            const li = document.createElement("li");
+            li.innerText = g.groupName;
+            list.appendChild(li);
+        });
+    });
+}
+
+loadGroups();
+</script>
+
+</body>
+</html>
