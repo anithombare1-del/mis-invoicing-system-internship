@@ -1,0 +1,15 @@
+mis-invoicing-system-internship/
+│
+├── backend/
+│   ├── src/main/java/com/example/mis/
+│   │   ├── controller/GroupController.java
+│   │   ├── entity/Group.java
+│   │   ├── repository/GroupRepository.java
+│   │   └── MisApplication.java
+│   │
+│   └── src/main/resources/application.properties
+│
+├── frontend/
+│   └── manage-groups.html
+│
+└── README.md
