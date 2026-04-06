@@ -11,4 +11,4 @@ The system helps manage clients, estimates, invoices, and payments.
 - Version Control: GitHub
 
 ## Internship Progress
-- Day 1: Project understanding, environment setup, GitHub repository created
+- Project understanding, environment setup, GitHub repository created
